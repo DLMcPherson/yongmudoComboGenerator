@@ -1,0 +1,123 @@
+html {
+    height: 100%;
+}
+
+/* unvisited link */
+a:link {
+    /* color: #3B7EA1; */
+    color: #4897C2;
+}
+
+/* visited link */
+a:visited {
+    /*color: #2F6380;*/
+    color: #4897C2;
+}
+
+/* mouse over link */
+a:hover {
+    color: #2F6380;
+}
+
+/* selected link */
+a:active {
+    color: #4795BF;
+}
+
+body {
+    font-family: "Gill Sans", sans-serif;
+    font-size: 16px;
+    background-color: #000000;
+    color: #dddddd;
+    padding: 3px;
+    height: 100%;
+}
+
+.wht {
+  padding: 60px;
+  padding-left:  100px;
+  padding-right: 100px;
+  background-color: #ffffff;
+  color: #2e3130
+}
+
+object {
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    /*font-family: Palatino, serif;*/
+    font-family: "Gill Sans", sans-serif;
+    border-bottom: 3px solid #2F6380;
+    color: #3B7EA1;
+    font-size: 48px;
+}
+
+ul#menu {
+    padding: 0;
+    margin-bottom: 11px;
+}
+
+ul#menu li {
+    display: inline;
+    margin-right: 3px;
+}
+
+ul#menu li a {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #2e3130;
+    border-radius: 4px 4px 0 0;
+}
+
+ul#menu li a:hover {
+    color: white;
+    background-color: #00182E;
+}
+
+#container {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+    width: 100%;
+}
+
+.subnav {
+  padding: 0px;
+  padding-top: 5px;
+  padding-bottom: 2px;
+  background-color : #00182E;
+}
+
+.blu {
+  padding: 60px;
+  padding-left:  100px;
+  padding-right: 100px;
+  background-color : #003262
+}
+
+.yel {
+  padding: 60px;
+  padding-left:  100px;
+  padding-right: 100px;
+  background-color : #C4820E
+}
+
+.bluViz {
+  padding: 0px;
+  padding-left:  0px;
+  padding-right: 0px;
+  background-color : #003262
+}
+
+#Tuesday, #Thursday, #AllWeek {display: inline-block; *display: inline; zoom: 1; vertical-align: top;}
+#Tuesday {width: 30%; }
+#Thursday {width: 39%; }
+#AllWeek {width: 30%; }
+
+#ColumnL, #ColumnC, #ColumnR {display: inline-block; *display: inline; zoom: 1; vertical-align: top;}
+#ColumnL {width: 30%; }
+#ColumnC {width: 30%; }
+#ColumnR {width: 30%; }
