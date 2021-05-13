@@ -111,6 +111,26 @@ movelist.push(new Move("Jump turning sidekick"))
 movelist.push(new Move("Uppercut"))
 movelist.push(new Move("Shoulder throw"))
 
+// === === Master Commins' Combos 5/12/21 === === //
+// Rear Frontkick, in-to-out downblock, rear frontpunch
+// Rear Frontkick, lead frontpunch
+// Low roundhouse, middle roundhouse, high roundhouse,
+
+// === Dr. Link Combo 4/12/21 === //
+// Jab, Frontkick, Turning Kick, Backturning Strike, Reverse punch
+
+// === Ashis 4/5/21 === //
+// Hook, turning bottomfist, hook, turning Bottomfist
+// lead roundhouse, turning backkick, reverse punch, lead roundhouse, turning backkick, reverse punch
+// neoblock, [lead punch], turning bottomfist, low out-to-in, high in-to-out, neoblock, [lead punch], turning bottomfist, low out-to-in, high in-to-out
+// === Jackie 4/5/21 === //
+// Pushkick, [downblock to hop offline], roundhouse, backkick
+// [downblock to hop offline], front kick, [downblock to step lead leg around to retreat and], back kick
+
+// === Dr. Link 2/7/21 === //
+// Jab, Cross, Knee lift, Backkick
+// Jab, Cross, Knee lift, clearing hammerfist
+
 function flipNewCard() {
   //let thisTarget = deck[curCard][1];
   for(var ii = 0; ii<4 ; ii++){
