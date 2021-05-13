@@ -31,19 +31,39 @@ stage.addChild(graphics);
 let ArcadeScore = 0;
 let textPosition = [];
 
-let stepText = [
-  new PIXI.Text('0',{fontFamily: 'Gill Sans', fontSize:100, fontWeight:500,fill : 0x007733}),
-  new PIXI.Text('0',{fontFamily: 'Gill Sans', fontSize:100, fontWeight:500,fill : 0x007733}),
-  new PIXI.Text('0',{fontFamily: 'Gill Sans', fontSize:100, fontWeight:500,fill : 0x007733}),
-  new PIXI.Text('0',{fontFamily: 'Gill Sans', fontSize:100, fontWeight:500,fill : 0x007733})
+let style = {fontFamily: 'Georgia', fontSize:100, fontWeight:500,fill : 0x007733}
+let stepTitle = [
+  new PIXI.Text('0',style),
+  new PIXI.Text('0',style),
+  new PIXI.Text('0',style),
+  new PIXI.Text('0',style)
+]
+style = {fontFamily: 'Gill Sans', fontSize:80, fontWeight:100,fill : 0x007733}
+let stepSide = [
+  new PIXI.Text('LEAD',style),
+  new PIXI.Text('LEAD',style),
+  new PIXI.Text('LEAD',style),
+  new PIXI.Text('LEAD',style)
+]
+let stepTarget = [
+  new PIXI.Text('to GUTS',style),
+  new PIXI.Text('to GUTS',style),
+  new PIXI.Text('to GUTS',style),
+  new PIXI.Text('to GUTS',style)
 ]
 let color = '0x115533'
 for(var ii = 0; ii < 4; ii++) {
-  stepText[ii].x = 20
-  stepText[ii].y = 20+100*ii
-  stepText[ii].text = 'Rear roundhouse kick';
-  stepText[ii].style.fill = color
-  stage.addChild(stepText[ii]);
+  stepTitle[ii].x = 300
+  stepTitle[ii].y = 20+100*ii
+  stepTitle[ii].text = 'Rear roundhouse kick';
+  stepTitle[ii].style.fill = color
+  stage.addChild(stepTitle[ii]);
+  stepSide[ii].x = 20
+  stepSide[ii].y = 30+100*ii
+  stage.addChild(stepSide[ii]);
+  stepTarget[ii].x = 1700
+  stepTarget[ii].y = 30+100*ii
+  stage.addChild(stepTarget[ii]);
 }
 
 //let optionText = new PIXI.Text('0',{fontFamily: 'Gill Sans', fontSize:50, fontWeight:500,fill : 0x000000})
