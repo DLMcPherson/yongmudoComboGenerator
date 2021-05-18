@@ -1,10 +1,11 @@
-let movelist = []
-movelist.push(new Move("Lead Punch / 'Jab'"))
-movelist.push(new Move("Rear Punch / 'Cross'"))
-movelist.push(new Move("Lead Forearm-shiver"))
-movelist.push(new Move("Turning Bottomfist"))
-
 let canonQuads = []
+
+// === === === === === === === === === === //
+// Quads as listed on the Yongmudo Wiki:
+//   https://lhallock.github.io/ymd-ext/techniques/quads.html //
+// === === === === === === === === === === //
+
+// Quad number 1 : Punching Part A
 canonQuads.push(
   [
     {
@@ -26,17 +27,47 @@ canonQuads.push(
       quadChirality: 0
     },
     {
-      move: techniqueDictionary["Backturning Hammerfist"],
+      nickname: "Turning Bottomfist",
+      move: techniqueDictionary["Backturned Hammerfist"],
+      sideOverride: ["Rear"],
+      quadChirality: 1
+    },
+  ]
+)
+// Quad number 2 : Punching Part B
+canonQuads.push(
+  [
+    {
+      nickname: "Forearm Shiver",
+      move: techniqueDictionary["Forward Chop"],
+      sideOverride: ["Lead"],
+      quadChirality: 0
+    },
+    {
+      nickname: "Turning Bottomfist",
+      move: techniqueDictionary["Backturned Hammerfist"],
+      sideOverride: ["Rear"],
+      quadChirality: 1
+    },
+    {
+      nickname: "Groin stirke",
+      move: techniqueDictionary["Backturned Chop"],
+      sideOverride: ["Lead"],
+      targetOverride: ["Groin"],
+      quadChirality: 0
+    },
+    {
+      // TODO: this technique is distinguished by hooking - should add a class of hooking forward strikes
+      move: techniqueDictionary["Forward Ridgehand"],
       sideOverride: ["Rear"],
       quadChirality: 1
     },
   ]
 )
 
-movelist.push(new Move("Lead Forearm-shiver"))
-movelist.push(new Move("Turning Bottomfist"))
-movelist.push(new Move("Lead Chop to Groin"))
-movelist.push(new Move("(hooking) Lead Ridge Hand"))
+
+
+let movelist = []
 
 movelist.push(new Move("Lead Elbowstrike"))
 movelist.push(new Move("Rear Elbowstrike"))

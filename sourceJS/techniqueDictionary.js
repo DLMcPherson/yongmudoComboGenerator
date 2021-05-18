@@ -28,7 +28,7 @@ for(var tech of ROTHANDS){
 }
 // Compile the backturning handstrikes
 for(var tech of ROTHANDS){
-  let name = "Backturning "+tech
+  let name = "Backturned "+tech
   let move = new Move(name)
   move.targets = [Guts, Floatingribs, Groin, Face, Collarbone]
   move.distance = ELBOWSLENGTH
