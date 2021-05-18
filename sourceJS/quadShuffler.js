@@ -53,7 +53,11 @@ function flipNewCard() {
       if(thisQuadMove.hasOwnProperty("nickname")){
         stepNickname[ii].text = 'Also known as "'+thisQuadMove.nickname+'"'
       } else {
-        stepNickname[ii].text = ''
+        if(thisQuadMove.hasOwnProperty("note")){
+          stepNickname[ii].text = thisQuadMove.note
+        } else {
+          stepNickname[ii].text = ''
+        }
       }
     }
   }

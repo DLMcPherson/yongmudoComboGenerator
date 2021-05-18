@@ -64,6 +64,34 @@ canonQuads.push(
     },
   ]
 )
+// Quad number 3 : Elbows A
+// Quad number 4 : Elbows B
+// Quad number 5 : Side kicks
+canonQuads.push(
+  [
+    {
+      move: techniqueDictionary["Side-kick"],
+      sideOverride: ["Lead"],
+      quadChirality: 0
+    },
+    {
+      move: techniqueDictionary["Backturning Side-kick"],
+      sideOverride: ["Rear"],
+      quadChirality: 1
+    },
+    {
+      move: techniqueDictionary["Backturning Side-kick"],
+      sideOverride: ["Rear"],
+      quadChirality: 0
+    },
+    {
+      note: "or Jump Turning Side-kick (which is technically a more linear variant)",
+      move: techniqueDictionary["Shuttle-kick"],
+      sideOverride: ["Rear"],
+      quadChirality: 1
+    },
+  ]
+)
 
 
 
@@ -79,10 +107,6 @@ movelist.push(new Move("Turning Back-elbowstrike"))
 //movelist.push(new Move("(Returning) Rear Rising-elbow"))
 //movelist.push(new Move("Rear Elbowstrike"))
 
-movelist.push(new Move("Lead Sidekick"))
-movelist.push(new Move("Back-turning Sidekick"))
-////movelist.push(new Move("Back-turning Sidekick")) # 360
-movelist.push(new Move("Shuttlekick"))
 
 movelist.push(new Move("Lead Roundhouse"))
 movelist.push(new Move("Rear Roundhouse"))
