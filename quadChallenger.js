@@ -90,7 +90,17 @@ for(var ii = 0; ii < 4; ii++) {
   stepTarget[ii].y = READOUT_Y+60+LEADLENGTH*ii
   stage.addChild(stepTarget[ii]);
 }
-
+let exerciseSuggestionLead = new PIXI.Text("EXERCISE SUGGESTION: ",styleSans)
+exerciseSuggestionLead.x = 100
+exerciseSuggestionLead.y = READOUT_Y+20+LEADLENGTH*4.5
+exerciseSuggestionLead.style.fontSize = 48
+stage.addChild(exerciseSuggestionLead)
+let exerciseSuggestion = new PIXI.Text("Repeat",styleSerif)
+exerciseSuggestion.x = 650
+exerciseSuggestion.y = READOUT_Y+20+LEADLENGTH*4.5
+exerciseSuggestion.text = "Repeat ten times, then switch left/right and repeat ten more times";
+exerciseSuggestion.style.fontSize = 48
+stage.addChild(exerciseSuggestion)
 
 // Add the clickable generation options
 var optionText = []
@@ -98,7 +108,7 @@ let options = ["PURE RANDOM QUADS","CANON QUADS"]
 for(let ii of [0,1]){
   optionText[ii] = new PIXI.Text('0',styleSans)
   optionText[ii].x = 100+2000*ii
-  optionText[ii].y = READOUT_Y+720
+  optionText[ii].y = READOUT_Y+LEADLENGTH*5.5
   optionText[ii].text = options[ii]
   optionText[ii].style.fill = 0xCCCCCC
   optionText[ii].style.fontSize = 48

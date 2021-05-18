@@ -58,6 +58,16 @@ function flipNewCard() {
     }
   }
 
+  // Randomize the exercise suggestion
+  let suggestedExercise = sampleUnif(
+    [
+      "Focus on turning power from the hips. Repeat twelve times, \n then switch left/right and repeat twelve more times",
+      "Focus on getting off the line. Work your way around a point three times, \n then switch left/right and work your way around the other way three times",
+      "Focus on moving with the strikes. Work your way across the room, \n then switch left/right and work your way back",
+    ]
+  )
+  exerciseSuggestion.text = suggestedExercise
+
 }
 
 function sampleUnif(arr) {
