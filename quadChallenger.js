@@ -28,9 +28,16 @@ let map1 = new FrameXYMap(30,0,0,30,FRAME_WIDTH*1/4,FRAME_HEIGHT/2);
 graphics.mapper = map1
 stage.addChild(graphics);
 
-let ArcadeScore = 0;
-let textPosition = [];
+// Header
 
+//let optionText = new PIXI.Text('0',{fontFamily: 'Gill Sans', fontSize:50, fontWeight:500,fill : 0x000000})
+//optionText.x = 100
+//optionText.y = 520
+//optionText.text = 'Primary techniques first';
+//optionText.style.fill = 0xCCCCCC
+//stage.addChild(optionText);
+
+// Layout the Quad Display
 let style = {fontFamily: 'Georgia', fontSize:100, fontWeight:500,fill : 0x007733}
 let stepTitle = [
   new PIXI.Text('0',style),
@@ -52,17 +59,18 @@ let stepTarget = [
   new PIXI.Text('to GUTS',style)
 ]
 let color = '0x115533'
+const READOUT_Y = 0
 for(var ii = 0; ii < 4; ii++) {
   stepTitle[ii].x = 570
-  stepTitle[ii].y = 50+100*ii
+  stepTitle[ii].y = READOUT_Y+50+100*ii
   stepTitle[ii].text = 'Rear roundhouse kick';
   stepTitle[ii].style.fill = color
   stage.addChild(stepTitle[ii]);
   stepSide[ii].x = 70
-  stepSide[ii].y = 60+100*ii
+  stepSide[ii].y = READOUT_Y+60+100*ii
   stage.addChild(stepSide[ii]);
   stepTarget[ii].x = 1750
-  stepTarget[ii].y = 60+100*ii
+  stepTarget[ii].y = READOUT_Y+60+100*ii
   stage.addChild(stepTarget[ii]);
 }
 
