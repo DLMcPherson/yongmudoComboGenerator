@@ -105,22 +105,3 @@ for(var tech of ["Front Spearing Push", "Front Spearing Thrust", "Front Knife-ed
 
 // Print to console for debugging
 console.log(techniqueDictionary)
-
-function flipNewCard() {
-  //let thisTarget = deck[curCard][1];
-  for(var ii = 0; ii<4 ; ii++){
-    var keys = Object.keys(techniqueDictionary);
-    let thisMove = techniqueDictionary[keys[ keys.length * Math.random() << 0]];
-    stepTitle[ii].text = thisMove.name
-    //stepSide[ii].text = sampleUnif(thisMove.sides).toUpperCase()
-    //stepSide[ii].text = sampleUnif(["Left","Right"]).toUpperCase()
-    stepSide[ii].text = sampleUnif(["Left","Right"]).toUpperCase() + ", " + sampleUnif(thisMove.sides).toUpperCase()
-    stepTarget[ii].text = "to "+sampleUnif(thisMove.targets).toUpperCase()
-    stepTarget[ii].x = stepTitle[ii].x + stepTitle[ii].width+30
-  }
-}
-
-function sampleUnif(arr) {
-  let randomIndex = Math.floor(Math.random() * arr.length);
-  return arr[randomIndex]
-}

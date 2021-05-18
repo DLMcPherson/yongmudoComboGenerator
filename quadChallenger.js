@@ -74,12 +74,35 @@ for(var ii = 0; ii < 4; ii++) {
   stage.addChild(stepTarget[ii]);
 }
 
-//let optionText = new PIXI.Text('0',{fontFamily: 'Gill Sans', fontSize:50, fontWeight:500,fill : 0x000000})
-//optionText.x = 100
-//optionText.y = 520
-//optionText.text = 'Primary techniques first';
-//optionText.style.fill = 0xCCCCCC
-//stage.addChild(optionText);
+
+// Add the clickable generation options
+var optionText = []
+let options = ["PURE RANDOM QUADS","CANON QUADS"]
+for(let ii of [0,1]){
+  optionText[ii] = new PIXI.Text('0',{fontFamily: 'Gill Sans', fontSize:50, fontWeight:500})
+  optionText[ii].x = 100+2000*ii
+  optionText[ii].y = READOUT_Y+520
+  optionText[ii].text = options[ii]
+  optionText[ii].style.fill = 0xCCCCCC
+  stage.addChild(optionText[ii]);
+  optionText[ii].interactive = true
+}
+onDown_randomQuad()
+var randomQuads = true
+optionText[0].on('mousedown', onDown_randomQuad);
+optionText[0].on('touchstart', onDown_randomQuad);
+function onDown_randomQuad(eventData){
+  randomQuads = true
+  optionText[0].style.fill = 0x220000
+  optionText[1].style.fill = 0xCCCCCC
+}
+optionText[1].on('mousedown', onDown_canonQuad);
+optionText[1].on('touchstart', onDown_canonQuad);
+function onDown_canonQuad(eventData){
+  randomQuads = false
+  optionText[0].style.fill = 0xCCCCCC
+  optionText[1].style.fill = 0x220000
+}
 
 // ===================== THE MAIN EVENT ================== //
 flipNewCard()

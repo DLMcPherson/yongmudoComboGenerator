@@ -3,6 +3,39 @@ movelist.push(new Move("Lead Punch / 'Jab'"))
 movelist.push(new Move("Rear Punch / 'Cross'"))
 movelist.push(new Move("Lead Forearm-shiver"))
 movelist.push(new Move("Turning Bottomfist"))
+
+let canonQuads = []
+canonQuads.push(
+  [
+    {
+      nickname: "Jab",
+      move: techniqueDictionary["Forward Fist"],
+      sideOverride: ["Lead"],
+      quadChirality: 0
+    },
+    {
+      nickname: "Cross",
+      move: techniqueDictionary["Forward Fist"],
+      sideOverride: ["Rear"],
+      quadChirality: 1
+    },
+    {
+      nickname: "Forearm Shiver",
+      move: techniqueDictionary["Forward Chop"],
+      sideOverride: ["Lead"],
+      quadChirality: 0
+    },
+    {
+      nickname: "Cross",
+      move: techniqueDictionary["Backturning Hammerfist"],
+      sideOverride: ["Rear"],
+      quadChirality: 1
+    },
+  ]
+)
+
+movelist.push(new Move("Lead Forearm-shiver"))
+movelist.push(new Move("Turning Bottomfist"))
 movelist.push(new Move("Lead Chop to Groin"))
 movelist.push(new Move("(hooking) Lead Ridge Hand"))
 
@@ -130,12 +163,3 @@ movelist.push(new Move("Shoulder throw"))
 // === Dr. Link 2/7/21 === //
 // Jab, Cross, Knee lift, Backkick
 // Jab, Cross, Knee lift, clearing hammerfist
-
-function flipNewCard() {
-  //let thisTarget = deck[curCard][1];
-  for(var ii = 0; ii<4 ; ii++){
-    let randomIndex = Math.floor(Math.random() * movelist.length);
-    let thisMove = movelist[randomIndex]
-    stepText[ii].text = thisMove.name
-  }
-}
