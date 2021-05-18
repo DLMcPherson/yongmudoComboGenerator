@@ -1,6 +1,6 @@
 "use strict"
 
-const FRAME_WIDTH = 1000;
+const FRAME_WIDTH = 1600;
 const FRAME_HEIGHT = 1000;
 const PLOT_X = 16;
 
@@ -159,6 +159,10 @@ document.addEventListener("mousedown",function(event) {
   flipNewCard();
   // End
 })
+document.addEventListener("touchstart",function(event) {
+  flipNewCard();
+  // End
+})
 
 // === === HANDLE WINDOW RESIZING EVENT HANDLERS === === //
 
@@ -186,11 +190,19 @@ function resize() {
   map1.by = newHeight/2
 
   let scale = newWidth/FRAME_WIDTH
+  /*
   if(scale > newHeight/FRAME_HEIGHT)
     scale = newHeight/FRAME_HEIGHT
+    console.log("height constrained scale")
+  */
+  if(scale > 1) scale = 1;
+  scale *= 0.6
+
+  console.log(scale)
 
   stage.scale.x = scale
   stage.scale.y = scale
   map1.bx /= scale
   map1.by /= scale
+
 }
