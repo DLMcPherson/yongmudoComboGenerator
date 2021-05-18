@@ -38,39 +38,56 @@ stage.addChild(graphics);
 //stage.addChild(optionText);
 
 // Layout the Quad Display
-let style = {fontFamily: 'Georgia', fontSize:100, fontWeight:500,fill : 0x007733}
-let stepTitle = [
-  new PIXI.Text('0',style),
-  new PIXI.Text('0',style),
-  new PIXI.Text('0',style),
-  new PIXI.Text('0',style)
+let styleSerif = {fontFamily: 'Georgia', fontSize:96, fontWeight:500,fill : 0x115533}
+var stepTitle = [
+  new PIXI.Text('PUNCH',styleSerif),
+  new PIXI.Text('PUNCH',styleSerif),
+  new PIXI.Text('PUNCH',styleSerif),
+  new PIXI.Text('PUNCH',styleSerif)
 ]
-style = {fontFamily: 'Gill Sans', fontSize:80, fontWeight:100,fill : 0x007733}
-let stepSide = [
-  new PIXI.Text('LEAD',style),
-  new PIXI.Text('LEAD',style),
-  new PIXI.Text('LEAD',style),
-  new PIXI.Text('LEAD',style)
+var styleSans = {fontFamily: 'Gill Sans', fontSize:84, fontWeight:100,fill : 0x007733}
+var stepSide = [
+  new PIXI.Text('LEAD',styleSans),
+  new PIXI.Text('LEAD',styleSans),
+  new PIXI.Text('LEAD',styleSans),
+  new PIXI.Text('LEAD',styleSans)
 ]
-let stepTarget = [
-  new PIXI.Text('to GUTS',style),
-  new PIXI.Text('to GUTS',style),
-  new PIXI.Text('to GUTS',style),
-  new PIXI.Text('to GUTS',style)
+var stepTarget = [
+  new PIXI.Text('to GUTS',styleSans),
+  new PIXI.Text('to GUTS',styleSans),
+  new PIXI.Text('to GUTS',styleSans),
+  new PIXI.Text('to GUTS',styleSans)
 ]
 let color = '0x115533'
+let numberText = []
+var stepNickname = []
+const READOUT_X = 370
 const READOUT_Y = 0
+const LEADLENGTH = 150
 for(var ii = 0; ii < 4; ii++) {
-  stepTitle[ii].x = 570
-  stepTitle[ii].y = READOUT_Y+50+100*ii
-  stepTitle[ii].text = 'Rear roundhouse kick';
-  stepTitle[ii].style.fill = color
-  stage.addChild(stepTitle[ii]);
-  stepSide[ii].x = 70
-  stepSide[ii].y = READOUT_Y+60+100*ii
+  // Place the side display
+  numberText[ii] = new PIXI.Text(ii+1+". ",styleSerif)
+  numberText[ii].x = READOUT_X - 120
+  numberText[ii].y = READOUT_Y+45+LEADLENGTH*ii
+  stage.addChild(numberText[ii]);
+  stepSide[ii].x = 0 + READOUT_X
+  stepSide[ii].y = READOUT_Y+60+LEADLENGTH*ii
   stage.addChild(stepSide[ii]);
-  stepTarget[ii].x = 1750
-  stepTarget[ii].y = READOUT_Y+60+100*ii
+  // Place the technique display
+  stepTitle[ii].x = 500 + READOUT_X
+  stepTitle[ii].y = READOUT_Y+50+LEADLENGTH*ii
+  stepTitle[ii].text = 'Rear roundhouse kick';
+  stage.addChild(stepTitle[ii]);
+  // Place the hidden nickname display
+  stepNickname[ii] = new PIXI.Text("Jab",styleSerif)
+  stepNickname[ii].x = 400 + READOUT_X
+  stepNickname[ii].y = READOUT_Y+20+LEADLENGTH*ii
+  stepNickname[ii].style.fontSize = 36
+  stepNickname[ii].text = '';
+  stage.addChild(stepNickname[ii]);
+  // Place the target display
+  stepTarget[ii].x = 1680 + READOUT_X
+  stepTarget[ii].y = READOUT_Y+60+LEADLENGTH*ii
   stage.addChild(stepTarget[ii]);
 }
 
@@ -79,11 +96,12 @@ for(var ii = 0; ii < 4; ii++) {
 var optionText = []
 let options = ["PURE RANDOM QUADS","CANON QUADS"]
 for(let ii of [0,1]){
-  optionText[ii] = new PIXI.Text('0',{fontFamily: 'Gill Sans', fontSize:50, fontWeight:500})
+  optionText[ii] = new PIXI.Text('0',styleSans)
   optionText[ii].x = 100+2000*ii
-  optionText[ii].y = READOUT_Y+520
+  optionText[ii].y = READOUT_Y+720
   optionText[ii].text = options[ii]
   optionText[ii].style.fill = 0xCCCCCC
+  optionText[ii].style.fontSize = 48
   stage.addChild(optionText[ii]);
   optionText[ii].interactive = true
 }

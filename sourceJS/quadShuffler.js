@@ -11,6 +11,7 @@ function flipNewCard() {
       stepSide[ii].text = sampleUnif(["Left","Right"]).toUpperCase() + ", " + sampleUnif(thisMove.sides).toUpperCase()
       stepTarget[ii].text = "to "+sampleUnif(thisMove.targets).toUpperCase()
       stepTarget[ii].x = stepTitle[ii].x + stepTitle[ii].width+30
+      stepNickname[ii].text = ''
     }
 
   } else { // Shuffled Canonical Quads
@@ -49,6 +50,11 @@ function flipNewCard() {
       stepSide[ii].text = thisMovesChirality.toUpperCase() + ", " + thisMovesSide.toUpperCase()
       stepTarget[ii].text = "to "+thisMovesTarget.toUpperCase()
       stepTarget[ii].x = stepTitle[ii].x + stepTitle[ii].width+30
+      if(thisQuadMove.hasOwnProperty("nickname")){
+        stepNickname[ii].text = 'Also known as "'+thisQuadMove.nickname+'"'
+      } else {
+        stepNickname[ii].text = ''
+      }
     }
   }
 

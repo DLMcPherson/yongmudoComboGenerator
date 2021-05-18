@@ -26,7 +26,6 @@ canonQuads.push(
       quadChirality: 0
     },
     {
-      nickname: "Cross",
       move: techniqueDictionary["Backturning Hammerfist"],
       sideOverride: ["Rear"],
       quadChirality: 1
