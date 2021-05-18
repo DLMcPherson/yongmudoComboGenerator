@@ -50,7 +50,7 @@ canonQuads.push(
       quadChirality: 1
     },
     {
-      nickname: "Groin stirke",
+      nickname: "Groin strike",
       move: techniqueDictionary["Backturned Chop"],
       sideOverride: ["Lead"],
       targetOverride: ["Groin"],
@@ -85,7 +85,7 @@ canonQuads.push(
       quadChirality: 0
     },
     {
-      note: "or Jump Turning Side-kick (which is technically a more linear variant)",
+      note: "or the (more linear) Jump Turning Side-kick",
       move: techniqueDictionary["Shuttle-kick"],
       sideOverride: ["Rear"],
       quadChirality: 1
@@ -106,7 +106,6 @@ movelist.push(new Move("Turning Falling-elbow"))
 movelist.push(new Move("Turning Back-elbowstrike"))
 //movelist.push(new Move("(Returning) Rear Rising-elbow"))
 //movelist.push(new Move("Rear Elbowstrike"))
-
 
 movelist.push(new Move("Lead Roundhouse"))
 movelist.push(new Move("Rear Roundhouse"))
