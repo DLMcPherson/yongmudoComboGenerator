@@ -44,7 +44,7 @@ for(var tech of LINHANDS){
   move.class = "Forward Hands"
   techniqueDictionary[name] = move
 }
-for(var tech of ROTHANDS){
+for(var tech of ["Chop", "Hammerfist", "Back-knuckle"]){
   let name = "Forward "+tech
   let move = new Move(name)
   move.targets = [Face, Neck, Guts, Floatingribs, Groin]
@@ -113,7 +113,8 @@ function flipNewCard() {
     let thisMove = techniqueDictionary[keys[ keys.length * Math.random() << 0]];
     stepTitle[ii].text = thisMove.name
     //stepSide[ii].text = sampleUnif(thisMove.sides).toUpperCase()
-    stepSide[ii].text = sampleUnif(["Left","Right"]).toUpperCase()
+    //stepSide[ii].text = sampleUnif(["Left","Right"]).toUpperCase()
+    stepSide[ii].text = sampleUnif(["Left","Right"]).toUpperCase() + ", " + sampleUnif(thisMove.sides).toUpperCase()
     stepTarget[ii].text = "to "+sampleUnif(thisMove.targets).toUpperCase()
     stepTarget[ii].x = stepTitle[ii].x + stepTitle[ii].width+30
   }

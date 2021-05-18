@@ -53,16 +53,16 @@ let stepTarget = [
 ]
 let color = '0x115533'
 for(var ii = 0; ii < 4; ii++) {
-  stepTitle[ii].x = 300
-  stepTitle[ii].y = 20+100*ii
+  stepTitle[ii].x = 570
+  stepTitle[ii].y = 50+100*ii
   stepTitle[ii].text = 'Rear roundhouse kick';
   stepTitle[ii].style.fill = color
   stage.addChild(stepTitle[ii]);
-  stepSide[ii].x = 20
-  stepSide[ii].y = 30+100*ii
+  stepSide[ii].x = 70
+  stepSide[ii].y = 60+100*ii
   stage.addChild(stepSide[ii]);
-  stepTarget[ii].x = 1700
-  stepTarget[ii].y = 30+100*ii
+  stepTarget[ii].x = 1750
+  stepTarget[ii].y = 60+100*ii
   stage.addChild(stepTarget[ii]);
 }
 
