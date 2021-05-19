@@ -97,11 +97,49 @@ for(var tech of ["Front Spearing Push", "Front Spearing Thrust", "Front Knife-ed
   move.class = "Linear Kicks"
   techniqueDictionary[name] = move
 }
-
-// TODO: compile the classless kicks
 // Compile the kneeup
+{
+  let name = "Kneeup"
+  let move = new Move(name)
+  move.targets = [Face, Guts, Groin, Knees]
+  move.distance = ARMSLENGTH
+  move.class = "Linear Kicks"
+  techniqueDictionary[name] = move
+}
 // Compile the scoop kick
+{
+  let name = "Scoop-kick"
+  let move = new Move(name)
+  move.targets = [Knees, "Shin", "Ankle"]
+  move.distance = ARMSLENGTH
+  move.class = "Linear Kicks"
+  techniqueDictionary[name] = move
+}
 // Compile the scissors kicks
+{
+  let name = "Front Scissors-kick"
+  let move = new Move(name)
+  move.targets = [Head, Guts, Floatingribs, Groin, Legs]
+  move.distance = FLYLENGTH
+  move.class = "Jump-Scissors Kicks"
+  techniqueDictionary[name] = move
+}
+{
+  let name = "Naraebang Roundhouse-kick"
+  let move = new Move(name)
+  move.targets = [Head, Guts, Floatingribs, Groin, Knees]
+  move.distance = LEGSLENGTH
+  move.class = "Jump-Scissors Kicks"
+  techniqueDictionary[name] = move
+}
+{
+  let name = "Naraebang Ax-kick"
+  let move = new Move(name)
+  move.targets = [Collarbone]
+  move.distance = LEGSLENGTH
+  move.class = "Jump-Scissors Kicks"
+  techniqueDictionary[name] = move
+}
 
 // Print to console for debugging
 console.log(techniqueDictionary)

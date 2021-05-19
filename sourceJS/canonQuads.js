@@ -65,7 +65,64 @@ canonQuads.push(
   ]
 )
 // Quad number 3 : Elbows A
+canonQuads.push(
+  [
+    {
+      nickname: "Elbow Jab",
+      move: techniqueDictionary["Forward Elbow"],
+      sideOverride: ["Lead"],
+      quadChirality: 0
+    },
+    {
+      nickname: "Elbow Cross",
+      move: techniqueDictionary["Forward Elbow"],
+      sideOverride: ["Rear"],
+      quadChirality: 1
+    },
+    {
+      nickname: "Elbow Uppercut",
+      move: techniqueDictionary["Rising Elbow"],
+      sideOverride: ["Lead"],
+      quadChirality: 0
+    },
+    {
+      nickname: "Turning Falling-elbow",
+      move: techniqueDictionary["Backturned Backelbow"],
+      sideOverride: ["Rear"],
+      targetOverride: ["Collarbone"],
+      quadChirality: 1
+    },
+  ]
+)
 // Quad number 4 : Elbows B
+canonQuads.push(
+  [
+    {
+      nickname: "Elbow Jab",
+      move: techniqueDictionary["Forward Elbow"],
+      sideOverride: ["Lead"],
+      quadChirality: 0
+    },
+    {
+      nickname: "Turning Back-elbowstrike",
+      move: techniqueDictionary["Backturned Backelbow"],
+      sideOverride: ["Rear"],
+      targetOverride: ["Guts","Groin","Floating ribs"],
+      quadChirality: 1
+    },
+    {
+      nickname: "Returning Elbow Uppercut",
+      move: techniqueDictionary["Rising Elbow"],
+      sideOverride: ["Lead"],
+      quadChirality: 0
+    },
+    {
+      move: techniqueDictionary["Forward Elbow"],
+      sideOverride: ["Rear"],
+      quadChirality: 1
+    },
+  ]
+)
 // Quad number 5 : Side kicks
 canonQuads.push(
   [
@@ -92,25 +149,33 @@ canonQuads.push(
     },
   ]
 )
-
-
+// Quad number 6 : Roundhouse kicks
+canonQuads.push(
+  [
+    {
+      move: techniqueDictionary["Chop Roundhouse-kick"],
+      sideOverride: ["Lead"],
+      quadChirality: 0
+    },
+    {
+      move: techniqueDictionary["Chop Roundhouse-kick"],
+      sideOverride: ["Rear"],
+      quadChirality: 1
+    },
+    {
+      move: techniqueDictionary["Shoot Roundhouse-kick"],
+      sideOverride: ["Rear"],
+      quadChirality: 1
+    },
+    {
+      move: techniqueDictionary["Naraebang Roundhouse-kick"],
+      sideOverride: ["Lead"],
+      quadChirality: 0
+    },
+  ]
+)
 
 let movelist = []
-
-movelist.push(new Move("Lead Elbowstrike"))
-movelist.push(new Move("Rear Elbowstrike"))
-movelist.push(new Move("Lead Rising-elbow"))
-movelist.push(new Move("Turning Falling-elbow"))
-
-//movelist.push(new Move("Lead Elbowstrike"))
-movelist.push(new Move("Turning Back-elbowstrike"))
-//movelist.push(new Move("(Returning) Rear Rising-elbow"))
-//movelist.push(new Move("Rear Elbowstrike"))
-
-movelist.push(new Move("Lead Roundhouse"))
-movelist.push(new Move("Rear Roundhouse"))
-//movelist.push(new Move("Rear Full-Roundhouse")) # 360
-movelist.push(new Move("Naraebang"))
 
 movelist.push(new Move("Lead Snapkick"))
 movelist.push(new Move("Rear Thrustkick"))
