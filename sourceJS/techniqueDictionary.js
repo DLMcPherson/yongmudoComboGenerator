@@ -117,7 +117,7 @@ for(var tech of ["Front Spearing Push", "Front Spearing Thrust", "Front Knife-ed
 }
 // Compile the scissors kicks
 {
-  let name = "Front Scissors-kick"
+  let name = "Scissors Front Thrust-kick"
   let move = new Move(name)
   move.targets = [Head, Guts, Floatingribs, Groin, Legs]
   move.distance = FLYLENGTH
@@ -125,6 +125,10 @@ for(var tech of ["Front Spearing Push", "Front Spearing Thrust", "Front Knife-ed
   techniqueDictionary[name] = move
 }
 {
+  //let name = "'Naraebang' Scissors Jump-Turning Roundhouse-kick"
+  // Question: on https://lhallock.github.io/ymd-ext/techniques/kicks.html is the Naraebang the Jump-Spinning Round or the Scissors Round?
+  // And how come there isn't a "Scissors Front"? Is it just called "Jump Front" here or is it excluded altogether?
+  // Also, what the heck is a cover kick?
   let name = "Naraebang Roundhouse-kick"
   let move = new Move(name)
   move.targets = [Head, Guts, Floatingribs, Groin, Knees]
@@ -133,6 +137,8 @@ for(var tech of ["Front Spearing Push", "Front Spearing Thrust", "Front Knife-ed
   techniqueDictionary[name] = move
 }
 {
+  //let name = "'Naraebang Ax-kick' Scissors Jump-Turning Knife-edge Ax-kick"
+  //let name = "'Naraebang Ax-kick' Scissors Jump-Turning Heeldown Ax-kick"
   let name = "Naraebang Ax-kick"
   let move = new Move(name)
   move.targets = [Collarbone]

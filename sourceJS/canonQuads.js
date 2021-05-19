@@ -174,15 +174,36 @@ canonQuads.push(
     },
   ]
 )
-
-let movelist = []
-
-movelist.push(new Move("Lead Snapkick"))
-movelist.push(new Move("Rear Thrustkick"))
-movelist.push(new Move("Scissors Thrustkick"))
-movelist.push(new Move("Backturnslide into Lead Thrustkick"))
+// Quad number 7 : Front kicks
+canonQuads.push(
+  [
+    {
+      move: techniqueDictionary["Front Knife-edge Thrust-kick"],
+      sideOverride: ["Lead"],
+      quadChirality: 0
+    },
+    {
+      move: techniqueDictionary["Front Spearing Thrust-kick"],
+      sideOverride: ["Rear"],
+      quadChirality: 1
+    },
+    {
+      move: techniqueDictionary["Scissors Front Thrust-kick"],
+      sideOverride: ["Lead"],
+      quadChirality: 1
+    },
+    {
+      note: "transition in with a backturn and slide forward",
+      move: techniqueDictionary["Front Knife-edge Thrust-kick"],
+      sideOverride: ["Lead"],
+      quadChirality: 1
+    },
+  ]
+)
 
 // === === === STEPHANIE SIU'S COMBOS === === === //
+/*
+let movelist = []
 
 movelist.push(new Move("Downblock = Low In-to-out block"))
 movelist.push(new Move("In-to-out block"))
@@ -281,3 +302,4 @@ movelist.push(new Move("Shoulder throw"))
 // === Dr. Link 2/7/21 === //
 // Jab, Cross, Knee lift, Backkick
 // Jab, Cross, Knee lift, clearing hammerfist
+*/
