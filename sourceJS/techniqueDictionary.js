@@ -56,6 +56,7 @@ for(var tech of ["Chop", "Hammerfist", "Back-knuckle"]){
 // Compile the blocks
 let Low = "Low"
 let High = "Midheight"
+let Headhigh = "High"
 for(var direc of ["In-to-out","Out-to-in"]){
   for(var tech of ["Hardblock","Softblock"]){
     let name = direc+" "+tech
@@ -67,10 +68,24 @@ for(var direc of ["In-to-out","Out-to-in"]){
   }
 }
 // Compile the tent blocks
- // TODO: add Tent blocks
+{
+  let name = "Tentblock"
+  let move = new Move(name)
+  move.targets = [Headhigh]
+  move.distance = ARMSLENGTH
+  move.class = "Blocks"
+  techniqueDictionary[name] = move
+}
 
 // Compile the axe kicks
- // TODO: add the axe kicks
+for(var tech of ["Knife-edge Axe","Heel down Axe"]){
+  let name = tech+"-kick"
+  let move = new Move(name)
+  move.targets = [Collarbone]
+  move.distance = LEGSLENGTH
+  move.class = "Axe Kicks"
+  techniqueDictionary[name] = move
+}
 // Compile the rotational kicks
 for(var tech of ["Shoot Roundhouse","Chop Roundhouse","Spin Heel"]){
   let name = tech+"-kick"
@@ -129,6 +144,7 @@ for(var tech of ["Front Spearing Push", "Front Spearing Thrust", "Front Knife-ed
   // Question: on https://lhallock.github.io/ymd-ext/techniques/kicks.html is the Naraebang the Jump-Spinning Round or the Scissors Round?
   // And how come there isn't a "Scissors Front"? Is it just called "Jump Front" here or is it excluded altogether?
   // Also, what the heck is a cover kick?
+  // TODO: figure out the formal name for the Naraebang
   let name = "Naraebang Roundhouse-kick"
   let move = new Move(name)
   move.targets = [Head, Guts, Floatingribs, Groin, Knees]
@@ -146,6 +162,9 @@ for(var tech of ["Front Spearing Push", "Front Spearing Thrust", "Front Knife-ed
   move.class = "Jump-Scissors Kicks"
   techniqueDictionary[name] = move
 }
+
+// TODO: consider adding slap kicks and cover kicks
+// TODO: find the name for that weird reverse roundhouse shot to the groin that Master Commins likes
 
 // Print to console for debugging
 console.log(techniqueDictionary)
