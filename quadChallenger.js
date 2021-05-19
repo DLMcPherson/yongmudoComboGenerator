@@ -47,10 +47,10 @@ var stepTitle = [
 ]
 var styleSans = {fontFamily: 'Gill Sans', fontSize:84, fontWeight:100,fill : 0x007733}
 var stepSide = [
-  new PIXI.Text('LEAD',styleSans),
-  new PIXI.Text('LEAD',styleSans),
-  new PIXI.Text('LEAD',styleSans),
-  new PIXI.Text('LEAD',styleSans)
+  new PIXI.Text('RIGHT, LEAD',styleSans),
+  new PIXI.Text('RIGHT, LEAD',styleSans),
+  new PIXI.Text('RIGHT, LEAD',styleSans),
+  new PIXI.Text('RIGHT, LEAD',styleSans)
 ]
 var stepTarget = [
   new PIXI.Text('to GUTS',styleSans),
@@ -64,9 +64,11 @@ var stepNickname = []
 const READOUT_X = 370
 const READOUT_Y = 0
 const LEADLENGTH = 150
+let SIDELENGTH = stepSide[0].width
 for(var ii = 0; ii < 4; ii++) {
   // Place the side display
   numberText[ii] = new PIXI.Text(ii+1+". ",styleSerif)
+  console.log(numberText[ii].width)
   numberText[ii].x = READOUT_X - 120
   numberText[ii].y = READOUT_Y+45+LEADLENGTH*ii
   stage.addChild(numberText[ii]);
@@ -74,19 +76,19 @@ for(var ii = 0; ii < 4; ii++) {
   stepSide[ii].y = READOUT_Y+60+LEADLENGTH*ii
   stage.addChild(stepSide[ii]);
   // Place the technique display
-  stepTitle[ii].x = 500 + READOUT_X
+  stepTitle[ii].x = SIDELENGTH+50 + READOUT_X
   stepTitle[ii].y = READOUT_Y+50+LEADLENGTH*ii
   stepTitle[ii].text = 'Rear roundhouse kick';
   stage.addChild(stepTitle[ii]);
   // Place the hidden nickname display
   stepNickname[ii] = new PIXI.Text("Jab",styleSerif)
-  stepNickname[ii].x = 400 + READOUT_X
+  stepNickname[ii].x = SIDELENGTH-50 + READOUT_X
   stepNickname[ii].y = READOUT_Y+20+LEADLENGTH*ii
   stepNickname[ii].style.fontSize = 36
   stepNickname[ii].text = '';
   stage.addChild(stepNickname[ii]);
   // Place the target display
-  stepTarget[ii].x = 1680 + READOUT_X
+  stepTarget[ii].x = SIDELENGTH+1080 + READOUT_X
   stepTarget[ii].y = READOUT_Y+60+LEADLENGTH*ii
   stage.addChild(stepTarget[ii]);
 }
@@ -96,7 +98,7 @@ exerciseSuggestionLead.y = READOUT_Y+20+LEADLENGTH*4.5
 exerciseSuggestionLead.style.fontSize = 48
 stage.addChild(exerciseSuggestionLead)
 let exerciseSuggestion = new PIXI.Text("Repeat",styleSerif)
-exerciseSuggestion.x = 650
+exerciseSuggestion.x = exerciseSuggestionLead.x+exerciseSuggestionLead.width+50
 exerciseSuggestion.y = READOUT_Y+20+LEADLENGTH*4.5
 exerciseSuggestion.text = "Repeat ten times, then switch left/right and repeat ten more times";
 exerciseSuggestion.style.fontSize = 48
